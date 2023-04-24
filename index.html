@@ -1,20 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="functions.js"></script>
-    <title>Rando Password Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222831;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #EEEEEE;
+            border-radius: 25px;
+            padding: 0 20px;
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 30px;
+            user-select: none;
+        }
+        h2 {
+            background-color: white;
+            width: 250px;
+            text-align: center;
+            margin: 20px 0 20px 0;
+            font-weight: normal;
+            border-radius: 8px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inputs-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .inputs-container label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+            color: white;
+            margin-bottom: 30px;
+            border: none;
+            height: 30px;
+            width: 200px;
+            background-color: #026F74;
+            border-radius: 8px;
+            transition: ease 0.2s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #393E46;
+            transition: ease 0.2s;
+        }
+    </style>
 </head>
 <body>
-    <div class="box">
-        <h2>Random Password Generator</h2>
-        <input type="text" placeholder="Create Password" id="password" readonly>
-        <div id="button" class="btn1" onclick="genPassword()">
-            Generate
+    <div class="container">
+        <h1>Random Password Generator</h1>
+        <h2>{{password}}</h2>
+        <form action="/" method="POST">
+        <div class="inputs-container">
+            <label>
+                <input type="checkbox" name="numbers">Numbers
+            </label>
+            <label>
+                <input type="checkbox" name="uppercase">Uppercase
+            </label>
+            </label>
+            <label>
+                <input type="checkbox" name="symbols">Symbols
+            </label>
         </div>
+        <button>Generate New Password</button>
+        </form>
     </div>
 </body>
 </html>
