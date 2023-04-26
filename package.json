@@ -2,13 +2,17 @@
     "name": "password",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "src/app.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js",
-      "build": "echo \"Building the application\" && npm install"
+        "test": "jest",
+        "start": "node src/app.js",
+        "build": "echo \"Building the application\" && npm install"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
-  }
+    "license": "ISC",
+    "dependencies": {
+        "jest": "^29.5.0",
+        "save-dev": "^0.0.1-security"
+    }
+}
